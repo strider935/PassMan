@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2 class="text-3xl font-bold mb-6 text-center">Create a PassMan Account</h2>
+<form method="post" class="space-y-4">
+  <input type="text" name="username" placeholder="Username" class="w-full p-3 bg-gray-800 border border-gray-700 rounded">
+  <input type="password" name="password" placeholder="Password" class="w-full p-3 bg-gray-800 border border-gray-700 rounded">
+  <button type="submit" class="w-full bg-green-600 hover:bg-green-500 text-white font-semibold py-2 rounded">Register</button>
+</form>
+<p class="mt-4 text-center text-sm">Already registered? <a href="{{ url_for('login') }}" class="text-blue-400 hover:underline">Log in</a></p>
+{% endblock %}

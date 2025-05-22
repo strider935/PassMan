@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2 class="text-2xl font-bold mb-6 text-center">Add New Entry</h2>
+<form method="post" class="space-y-4">
+  <input type="text" name="site" placeholder="Site" class="w-full p-3 bg-gray-800 border border-gray-700 rounded">
+  <input type="text" name="username" placeholder="Username" class="w-full p-3 bg-gray-800 border border-gray-700 rounded">
+  <div class="flex space-x-2">
+    <input type="text" name="password" id="password" placeholder="Password" class="flex-grow p-3 bg-gray-800 border border-gray-700 rounded">
+    <button type="button" onclick="generatePassword()" class="bg-purple-600 hover:bg-purple-500 text-white px-4 rounded">🔄</button>
+  </div>
+  <button type="submit" class="w-full bg-green-600 hover:bg-green-500 text-white font-semibold py-2 rounded">Save Entry</button>
+</form>
+<p class="mt-4 text-center text-sm"><a href="{{ url_for('dashboard') }}" class="text-blue-400 hover:underline">← Back to Dashboard</a></p>
+
+<script>
+  function generatePassword() {
+    fetch("/generate")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("password").value = data.password;
+      });
+  }
+</script>
+{% endblock %}

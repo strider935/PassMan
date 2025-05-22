@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>PassMan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex items-center justify-center px-4 py-10">
+  <div class="w-full max-w-xl">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="space-y-2 mb-6">
+          {% for category, message in messages %}
+            <div class="p-3 rounded shadow {% if category == 'error' %}bg-red-600{% else %}bg-green-600{% endif %}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>
