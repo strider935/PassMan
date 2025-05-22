@@ -1,0 +1,24 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+venv/
+env/
+
+# Editor config
+.vscode/
+.idea/
+
+# Vaults (sensitive user data)
+vaults/
+
+# System files
+.DS_Store
+Thumbs.db

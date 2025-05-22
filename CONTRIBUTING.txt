@@ -1,0 +1,25 @@
+# Contributing to PassMan
+
+Thank you for considering contributing to PassMan! Before you submit any contributions, please read the following guidelines.
+
+## 🤝 Code Contributions
+
+- Keep features focused and security-conscious
+- Follow the existing style and structure
+- Always sanitize and validate user input
+- Use meaningful commit messages
+
+## 📁 File Conventions
+
+- Use `.env.example` for any environment variables
+- Never commit real user vaults — the `/vaults/` directory is ignored
+
+## 🛠️ Security Tips
+
+- Don’t log or print user passwords or secrets
+- Never run this app in debug mode in production
+- Assume all user-uploaded files can be dangerous
+
+## 💬 Feedback
+
+For bugs, suggestions, or features, feel free to open an issue.
